@@ -20,7 +20,7 @@ main .search-products {
   max-width: 780px;
 }
 
-main .search-products .search-products-carousel-wrapper {
+main .search-products .search-products-wrapper {
   position: relative;
 }
 
@@ -48,13 +48,14 @@ main .search-products .search-products-card {
   flex-direction: column;
   scroll-snap-align: start;
   box-sizing: border-box;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 main .search-products .search-products-image {
   flex: 6;
   width: 100%;
   aspect-ratio: 16 / 9;
+  background: #f2f2f2;
   overflow: hidden;
 }
 
@@ -65,36 +66,32 @@ main .search-products .search-products-image img {
   display: block;
 }
 
+/* Card info strip — palette-derived background set inline in JS (theme?.bg ?? '#1a1a1a') */
 main .search-products .search-products-info {
   flex: 4;
+  padding: 10px 14px;
   display: flex;
   flex-direction: column;
-  padding: 10px 14px;
   gap: 4px;
-  box-sizing: border-box;
 }
 
-main .search-products .search-products-name {
+main .search-products .search-products-title {
   margin: 0;
   font-size: 14px;
   font-weight: 700;
-  line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: inherit;
 }
 
 main .search-products .search-products-desc {
   margin: 0;
   font-size: 11px;
-  line-height: 1.35;
   opacity: 0.78;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  color: inherit;
 }
 
 main .search-products .search-products-meta {
@@ -102,38 +99,38 @@ main .search-products .search-products-meta {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  margin-top: 2px;
   font-size: 13px;
+  margin-top: 2px;
 }
 
 main .search-products .search-products-price {
   font-weight: 700;
-  font-size: 13px;
-  color: inherit;
 }
 
 main .search-products .search-products-badge {
+  background: #2563eb;
+  color: #fff;
   font-size: 10px;
   font-weight: 600;
-  color: #fff;
   padding: 2px 8px;
   border-radius: 10px;
   white-space: nowrap;
 }
 
 main .search-products .search-products-cta {
-  margin-top: auto;
+  margin-top: 8px;
+  padding: 8px 0;
   width: 100%;
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: #2563eb;
   color: #fff;
   font-family: inherit;
   font-size: 12px;
   font-weight: 600;
-  padding: 8px 0;
-  border-radius: 6px;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s;
 }
 
 main .search-products .search-products-cta:hover {
@@ -150,18 +147,18 @@ main .search-products .search-products-arrow {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   border: none;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  transition: background 0.15s ease;
+  transition: background 0.15s;
 }
 
 main .search-products .search-products-arrow:hover {
@@ -169,7 +166,7 @@ main .search-products .search-products-arrow:hover {
 }
 
 main .search-products .search-products-arrow:focus-visible {
-  outline: 2px solid #00647d;
+  outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
 
@@ -181,6 +178,7 @@ main .search-products .search-products-arrow-right {
   right: 6px;
 }
 
+/* Dark theme — dim outer background only; card info strips keep their dark palette color */
 @media (prefers-color-scheme: dark) {
   main .search-products { background: #111; }
 }
