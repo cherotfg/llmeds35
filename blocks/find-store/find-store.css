@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .find-store {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Empty / search state */
+main .find-store .find-store-search {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+main .find-store .find-store-search-icon {
+  opacity: 0.7;
+  line-height: 0;
+}
+
+main .find-store .find-store-search-heading {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+main .find-store .find-store-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+main .find-store .find-store-input {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+main .find-store .find-store-input::placeholder {
+  color: #888;
+}
+
+main .find-store .find-store-input:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 1px;
+}
+
+main .find-store .find-store-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+main .find-store .find-store-btn:hover {
+  opacity: 0.88;
+}
+
+main .find-store .find-store-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Results state */
+main .find-store .find-store-results {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+main .find-store .find-store-card {
+  flex: 0 0 260px;
+  max-width: 260px;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+main .find-store .find-store-pin {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+main .find-store .find-store-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+main .find-store .find-store-address {
+  font-size: 12px;
+  opacity: 0.78;
+  line-height: 1.35;
+}
+
+main .find-store .find-store-phone {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+main .find-store .find-store-hours {
+  font-size: 11px;
+  opacity: 0.65;
+  line-height: 1.3;
+}
+
+/* Dark mode — dim outer background only; keep palette-colored cards intact */
+@media (prefers-color-scheme: dark) {
+  main .find-store { background: transparent; }
+}
+body.dark main .find-store { background: transparent; }
